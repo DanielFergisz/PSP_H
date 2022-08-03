@@ -133,35 +133,72 @@ Public Class Form1
 
             Log1.AppendText(Environment.NewLine + "Deleting old file..")
             System.IO.File.Delete(Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP")
-            Log1.AppendText(Environment.NewLine + "Copying the new OFW 6.60 file to SD..")
-            System.IO.File.Copy(appPath & "\PSP\GAME\UPDATE\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP")
-            If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP") = True Then
-                Log1.SelectionColor = Color.ForestGreen
-                Log1.AppendText("OK")
-                Log1.SelectionColor = Color.Empty
-                Log1.AppendText(Environment.NewLine + "")
-                Log1.AppendText(Environment.NewLine + "Done.")
-                Log1.AppendText(Environment.NewLine + "")
+            If R4.Checked Then
+                Log1.AppendText(Environment.NewLine + "Copying the OFW 6.60 file for PSP Go to SD..")
+                System.IO.File.Copy(appPath & "\PSP\GAME\Go\6.60\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.SelectionColor = Color.Empty
+                    Log1.AppendText(Environment.NewLine + "")
+                    Log1.AppendText(Environment.NewLine + "Done.")
+                    Log1.AppendText(Environment.NewLine + "")
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+
+                End If
             Else
-                Log1.SelectionColor = Color.Red
-                Log1.AppendText("FAIL")
-                Log1.SelectionColor = Color.Empty
+                Log1.AppendText(Environment.NewLine + "Copying the OFW 6.60 file to SD..")
+                System.IO.File.Copy(appPath & "\PSP\GAME\UPDATE\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.SelectionColor = Color.Empty
+                    Log1.AppendText(Environment.NewLine + "")
+                    Log1.AppendText(Environment.NewLine + "Done.")
+                    Log1.AppendText(Environment.NewLine + "")
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+
+                End If
             End If
         Else
-                Log1.AppendText(Environment.NewLine + "Copying the OFW 6.60 file to SD..")
-            System.IO.File.Copy(appPath & "\PSP\GAME\UPDATE\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP")
-            If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP") = True Then
-                Log1.SelectionColor = Color.ForestGreen
-                Log1.AppendText("OK")
-                Log1.SelectionColor = Color.Empty
-                Log1.AppendText(Environment.NewLine + "")
-                Log1.AppendText(Environment.NewLine + "Done.")
-                Log1.AppendText(Environment.NewLine + "")
-            Else
-                Log1.SelectionColor = Color.Red
-                Log1.AppendText("FAIL")
-                Log1.SelectionColor = Color.Empty
+            If R4.Checked Then
+                Log1.AppendText(Environment.NewLine + "Copying the OFW 6.60 file for PSP Go to SD..")
+                System.IO.File.Copy(appPath & "\PSP\GAME\Go\6.60\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.SelectionColor = Color.Empty
+                    Log1.AppendText(Environment.NewLine + "")
+                    Log1.AppendText(Environment.NewLine + "Done.")
+                    Log1.AppendText(Environment.NewLine + "")
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
 
+                End If
+            Else
+                Log1.AppendText(Environment.NewLine + "Copying the OFW 6.60 file to SD..")
+                System.IO.File.Copy(appPath & "\PSP\GAME\UPDATE\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.SelectionColor = Color.Empty
+                    Log1.AppendText(Environment.NewLine + "")
+                    Log1.AppendText(Environment.NewLine + "Done.")
+                    Log1.AppendText(Environment.NewLine + "")
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+
+                End If
             End If
         End If
     End Sub
@@ -488,110 +525,211 @@ Public Class Form1
                 Log1.AppendText(Environment.NewLine + "")
             End If
 
-            If R3.Checked = True Then
-                    If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery") Then
-                    Else
-                        Log1.AppendText(Environment.NewLine + "Creating directory: FastRecovery..")
-                        System.IO.Directory.CreateDirectory(Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery")
-                        If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery") Then
-                            Log1.SelectionColor = Color.ForestGreen
-                            Log1.AppendText("OK")
-                            Log1.SelectionColor = Color.Empty
-                        Else
-                            Log1.SelectionColor = Color.Red
-                            Log1.AppendText("FAIL")
-                            Log1.SelectionColor = Color.Empty
-                        End If
-                    End If
+        'PSP 3000 / Street
+        If R3.Checked = True Then
+            If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery") Then
+            Else
+                Log1.AppendText(Environment.NewLine + "Creating directory: FastRecovery..")
+                System.IO.Directory.CreateDirectory(Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery")
+                If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery") Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.SelectionColor = Color.Empty
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+                End If
+            End If
 
-                    If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\PROUPDATE\EBOOT.PBP") = True Then
-                        Log1.AppendText(Environment.NewLine + "The PROUPDATE file already exists")
-                    Else
-                        Log1.AppendText(Environment.NewLine + "Copying the PROUPDATE file..")
-                        System.IO.File.Copy(appPath & "\PSP\GAME\PROUPDATE\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\PROUPDATE\EBOOT.PBP")
-                        If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\PROUPDATE\EBOOT.PBP") = True Then
-                            Log1.SelectionColor = Color.ForestGreen
-                            Log1.AppendText("OK")
-                            Log1.SelectionColor = Color.Empty
-                        Else
-                            Log1.SelectionColor = Color.Red
-                            Log1.AppendText("FAIL")
-                            Log1.SelectionColor = Color.Empty
-                        End If
-                    End If
+            If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\PROUPDATE\EBOOT.PBP") = True Then
+                Log1.AppendText(Environment.NewLine + "The PROUPDATE file already exists")
+            Else
+                Log1.AppendText(Environment.NewLine + "Copying the PROUPDATE file..")
+                System.IO.File.Copy(appPath & "\PSP\GAME\PROUPDATE\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\PROUPDATE\EBOOT.PBP")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\PROUPDATE\EBOOT.PBP") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.SelectionColor = Color.Empty
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+                End If
+            End If
 
-                    If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery\EBOOT.PBP") = True Then
-                        Log1.AppendText(Environment.NewLine + "The FastRecovery file already exists")
-                    Else
-                        Log1.AppendText(Environment.NewLine + "Copying the FastRecovery file..")
-                        System.IO.File.Copy(appPath & "\PSP\GAME\FastRecovery\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery\EBOOT.PBP")
-                        If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery\EBOOT.PBP") = True Then
-                            Log1.SelectionColor = Color.ForestGreen
-                            Log1.AppendText("OK")
-                            Log1.SelectionColor = Color.Empty
-                        Else
-                            Log1.SelectionColor = Color.Red
-                            Log1.AppendText("FAIL")
-                            Log1.SelectionColor = Color.Empty
-                        End If
-                    End If
+            If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery\EBOOT.PBP") = True Then
+                Log1.AppendText(Environment.NewLine + "The FastRecovery file already exists")
+            Else
+                Log1.AppendText(Environment.NewLine + "Copying the FastRecovery file..")
+                System.IO.File.Copy(appPath & "\PSP\GAME\FastRecovery\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery\EBOOT.PBP")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery\EBOOT.PBP") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.SelectionColor = Color.Empty
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+                End If
+            End If
 
-                    If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "seplugins\localizer.dat") = True Then
-                        Log1.AppendText(Environment.NewLine + "The localizer.dat file already exists")
-                    Else
-                        Log1.AppendText(Environment.NewLine + "Copying the localizer.dat file..")
-                        System.IO.File.Copy(appPath & "\Seplugins\localizer.dat", Mid(Disks.Text, 1, 3) & "Seplugins\localizer.dat")
-                        If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "Seplugins\localizer.dat") = True Then
-                            Log1.SelectionColor = Color.ForestGreen
-                            Log1.AppendText("OK")
-                            Log1.SelectionColor = Color.Empty
-                        Else
-                            Log1.SelectionColor = Color.Red
-                            Log1.AppendText("FAIL")
-                            Log1.SelectionColor = Color.Empty
-                        End If
-                    End If
+            If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "seplugins\localizer.dat") = True Then
+                Log1.AppendText(Environment.NewLine + "The localizer.dat file already exists")
+            Else
+                Log1.AppendText(Environment.NewLine + "Copying the localizer.dat file..")
+                System.IO.File.Copy(appPath & "\Seplugins\localizer.dat", Mid(Disks.Text, 1, 3) & "Seplugins\localizer.dat")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "Seplugins\localizer.dat") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.SelectionColor = Color.Empty
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+                End If
+            End If
 
-                    If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "\seplugins\localizer.prx") = True Then
-                        Log1.AppendText(Environment.NewLine + "The localizer.prx file already exists")
-                    Else
-                        Log1.AppendText(Environment.NewLine + "Copying the localizer.prx file..")
-                        System.IO.File.Copy(appPath & "\seplugins\localizer.prx", Mid(Disks.Text, 1, 3) & "\seplugins\localizer.prx")
-                        If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "\seplugins\localizer.prx") = True Then
-                            Log1.SelectionColor = Color.ForestGreen
-                            Log1.AppendText("OK")
-                            Log1.SelectionColor = Color.Empty
-                        Else
-                            Log1.SelectionColor = Color.Red
-                            Log1.AppendText("FAIL")
-                            Log1.SelectionColor = Color.Empty
-                        End If
-                    End If
+            If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "\seplugins\localizer.prx") = True Then
+                Log1.AppendText(Environment.NewLine + "The localizer.prx file already exists")
+            Else
+                Log1.AppendText(Environment.NewLine + "Copying the localizer.prx file..")
+                System.IO.File.Copy(appPath & "\seplugins\localizer.prx", Mid(Disks.Text, 1, 3) & "\seplugins\localizer.prx")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "\seplugins\localizer.prx") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.SelectionColor = Color.Empty
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+                End If
+            End If
 
-                    If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "\seplugins\vsh.txt") = True Then
-                        Log1.AppendText(Environment.NewLine + "The vsh.txt file already exists")
-                    Else
-                        Log1.AppendText(Environment.NewLine + "Copying the vsh.txt file..")
-                        System.IO.File.Copy(appPath & "\seplugins\vsh.txt", Mid(Disks.Text, 1, 3) & "\seplugins\vsh.txt")
-                        If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "\seplugins\vsh.txt") = True Then
-                            Log1.SelectionColor = Color.ForestGreen
-                            Log1.AppendText("OK")
-                            Log1.SelectionColor = Color.Empty
-                        Else
-                            Log1.SelectionColor = Color.Red
-                            Log1.AppendText("FAIL")
-                            Log1.SelectionColor = Color.Empty
-                        End If
-                    End If
+            If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "\seplugins\vsh.txt") = True Then
+                Log1.AppendText(Environment.NewLine + "The vsh.txt file already exists")
+            Else
+                Log1.AppendText(Environment.NewLine + "Copying the vsh.txt file..")
+                System.IO.File.Copy(appPath & "\seplugins\vsh.txt", Mid(Disks.Text, 1, 3) & "\seplugins\vsh.txt")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "\seplugins\vsh.txt") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.SelectionColor = Color.Empty
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+                End If
+            End If
             Log1.AppendText(Environment.NewLine + "")
             Log1.SelectionColor = Color.ForestGreen
             Log1.AppendText(Environment.NewLine + "Done.")
             Log1.SelectionColor = Color.Empty
             Log1.AppendText(Environment.NewLine + "")
+        End If
 
+        'PSP Go
+        If R4.Checked = True Then
+            If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery") Then
+            Else
+                Log1.AppendText(Environment.NewLine + "Creating directory: FastRecovery..")
+                System.IO.Directory.CreateDirectory(Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery")
+                If System.IO.Directory.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery") Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.SelectionColor = Color.Empty
                 Else
-                    MsgBox("Please select disk drive first !!!")
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
                 End If
+            End If
+
+            If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\PROUPDATE\EBOOT.PBP") = True Then
+                Log1.AppendText(Environment.NewLine + "The PROUPDATE file already exists")
+            Else
+                Log1.AppendText(Environment.NewLine + "Copying the PROUPDATE file..")
+                System.IO.File.Copy(appPath & "\PSP\GAME\PROUPDATE\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\PROUPDATE\EBOOT.PBP")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\PROUPDATE\EBOOT.PBP") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.SelectionColor = Color.Empty
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+                End If
+            End If
+
+            If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery\EBOOT.PBP") = True Then
+                Log1.AppendText(Environment.NewLine + "The FastRecovery file already exists")
+            Else
+                Log1.AppendText(Environment.NewLine + "Copying the FastRecovery file..")
+                System.IO.File.Copy(appPath & "\PSP\GAME\FastRecovery\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery\EBOOT.PBP")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\FastRecovery\EBOOT.PBP") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.SelectionColor = Color.Empty
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+                End If
+            End If
+
+            If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "seplugins\localizer.dat") = True Then
+                Log1.AppendText(Environment.NewLine + "The localizer.dat file already exists")
+            Else
+                Log1.AppendText(Environment.NewLine + "Copying the localizer.dat file..")
+                System.IO.File.Copy(appPath & "\PSP\GAME\Go\seplugins\localizer.dat", Mid(Disks.Text, 1, 3) & "Seplugins\localizer.dat")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "Seplugins\localizer.dat") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.SelectionColor = Color.Empty
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+                End If
+            End If
+
+            If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "\seplugins\localizer.prx") = True Then
+                Log1.AppendText(Environment.NewLine + "The localizer.prx file already exists")
+            Else
+                Log1.AppendText(Environment.NewLine + "Copying the localizer.prx file..")
+                System.IO.File.Copy(appPath & "\PSP\GAME\Go\seplugins\localizer.prx", Mid(Disks.Text, 1, 3) & "\seplugins\localizer.prx")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "\seplugins\localizer.prx") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.SelectionColor = Color.Empty
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+                End If
+            End If
+
+            If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "\seplugins\vsh.txt") = True Then
+                Log1.AppendText(Environment.NewLine + "The vsh.txt file already exists")
+            Else
+                Log1.AppendText(Environment.NewLine + "Copying the vsh.txt file..")
+                System.IO.File.Copy(appPath & "\PSP\GAME\Go\seplugins\vsh.txt", Mid(Disks.Text, 1, 3) & "\seplugins\vsh.txt")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "\seplugins\vsh.txt") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.SelectionColor = Color.Empty
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+                End If
+            End If
+            Log1.AppendText(Environment.NewLine + "")
+            Log1.SelectionColor = Color.ForestGreen
+            Log1.AppendText(Environment.NewLine + "Done.")
+            Log1.SelectionColor = Color.Empty
+            Log1.AppendText(Environment.NewLine + "")
+        End If
 
     End Sub
 
@@ -687,37 +825,74 @@ Public Class Form1
 
             Log1.AppendText(Environment.NewLine + "Deleting old file..")
             System.IO.File.Delete(Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP")
-            Log1.AppendText(Environment.NewLine + "Copying the new OFW 6.61 file to SD..")
-            System.IO.File.Copy(appPath & "\PSP\GAME\UPDATE_661\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP")
-            If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP") = True Then
-                Log1.SelectionColor = Color.ForestGreen
-                Log1.AppendText("OK")
-                Log1.AppendText(Environment.NewLine + "")
-                Log1.AppendText(Environment.NewLine + "Done.")
-                Log1.AppendText(Environment.NewLine + "")
-                Log1.SelectionColor = Color.Empty
+            If R4.Checked = True Then
+                Log1.AppendText(Environment.NewLine + "Copying the OFW 6.61 file for PSP Go to SD..")
+                System.IO.File.Copy(appPath & "\PSP\GAME\Go\6.61\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.AppendText(Environment.NewLine + "")
+                    Log1.AppendText(Environment.NewLine + "Done.")
+                    Log1.AppendText(Environment.NewLine + "")
+                    Log1.SelectionColor = Color.Empty
 
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+                End If
             Else
-                Log1.SelectionColor = Color.Red
-                Log1.AppendText("FAIL")
-                Log1.SelectionColor = Color.Empty
+                Log1.AppendText(Environment.NewLine + "Copying the OFW 6.61 file to SD..")
+                System.IO.File.Copy(appPath & "\PSP\GAME\UPDATE_661\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.AppendText(Environment.NewLine + "")
+                    Log1.AppendText(Environment.NewLine + "Done.")
+                    Log1.AppendText(Environment.NewLine + "")
+                    Log1.SelectionColor = Color.Empty
+
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+
+                End If
             End If
         Else
-            Log1.AppendText(Environment.NewLine + "Copying the OFW 6.61 file to SD..")
-            System.IO.File.Copy(appPath & "\PSP\GAME\UPDATE_661\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP")
-            If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP") = True Then
-                Log1.SelectionColor = Color.ForestGreen
-                Log1.AppendText("OK")
-                Log1.AppendText(Environment.NewLine + "")
-                Log1.AppendText(Environment.NewLine + "Done.")
-                Log1.AppendText(Environment.NewLine + "")
-                Log1.SelectionColor = Color.Empty
+            If R4.Checked = True Then
+                Log1.AppendText(Environment.NewLine + "Copying the OFW 6.61 file for PSP Go to SD..")
+                System.IO.File.Copy(appPath & "\PSP\GAME\Go\6.61\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.AppendText(Environment.NewLine + "")
+                    Log1.AppendText(Environment.NewLine + "Done.")
+                    Log1.AppendText(Environment.NewLine + "")
+                    Log1.SelectionColor = Color.Empty
 
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+                End If
             Else
-                Log1.SelectionColor = Color.Red
-                Log1.AppendText("FAIL")
-                Log1.SelectionColor = Color.Empty
+                Log1.AppendText(Environment.NewLine + "Copying the OFW 6.61 file to SD..")
+                System.IO.File.Copy(appPath & "\PSP\GAME\UPDATE_661\EBOOT.PBP", Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP")
+                If System.IO.File.Exists(Mid(Disks.Text, 1, 3) & "PSP\GAME\UPDATE\EBOOT.PBP") = True Then
+                    Log1.SelectionColor = Color.ForestGreen
+                    Log1.AppendText("OK")
+                    Log1.AppendText(Environment.NewLine + "")
+                    Log1.AppendText(Environment.NewLine + "Done.")
+                    Log1.AppendText(Environment.NewLine + "")
+                    Log1.SelectionColor = Color.Empty
 
+                Else
+                    Log1.SelectionColor = Color.Red
+                    Log1.AppendText("FAIL")
+                    Log1.SelectionColor = Color.Empty
+
+                End If
             End If
         End If
     End Sub

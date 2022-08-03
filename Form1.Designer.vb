@@ -25,6 +25,7 @@ Partial Class Form1
         Me.Disks = New System.Windows.Forms.ComboBox()
         Me.Open = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.R4 = New System.Windows.Forms.RadioButton()
         Me.R3 = New System.Windows.Forms.RadioButton()
         Me.R2 = New System.Windows.Forms.RadioButton()
         Me.R1 = New System.Windows.Forms.RadioButton()
@@ -46,56 +47,63 @@ Partial Class Form1
         Me.Disks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Disks.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Disks.FormattingEnabled = True
-        Me.Disks.Location = New System.Drawing.Point(16, 15)
-        Me.Disks.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Disks.Location = New System.Drawing.Point(12, 12)
         Me.Disks.Name = "Disks"
-        Me.Disks.Size = New System.Drawing.Size(305, 25)
+        Me.Disks.Size = New System.Drawing.Size(230, 21)
         Me.Disks.TabIndex = 0
         '
         'Open
         '
         Me.Open.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Open.Location = New System.Drawing.Point(331, 15)
-        Me.Open.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Open.Location = New System.Drawing.Point(248, 12)
         Me.Open.Name = "Open"
-        Me.Open.Size = New System.Drawing.Size(100, 28)
+        Me.Open.Size = New System.Drawing.Size(75, 23)
         Me.Open.TabIndex = 1
         Me.Open.Text = "Open"
         Me.Open.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.R4)
         Me.GroupBox1.Controls.Add(Me.R3)
         Me.GroupBox1.Controls.Add(Me.R2)
         Me.GroupBox1.Controls.Add(Me.R1)
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 48)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 39)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox1.Size = New System.Drawing.Size(415, 52)
+        Me.GroupBox1.Size = New System.Drawing.Size(311, 42)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
+        '
+        'R4
+        '
+        Me.R4.AutoSize = True
+        Me.R4.Location = New System.Drawing.Point(260, 15)
+        Me.R4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.R4.Name = "R4"
+        Me.R4.Size = New System.Drawing.Size(39, 17)
+        Me.R4.TabIndex = 3
+        Me.R4.TabStop = True
+        Me.R4.Text = "Go"
+        Me.R4.UseVisualStyleBackColor = True
         '
         'R3
         '
         Me.R3.AutoSize = True
         Me.R3.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.R3.Location = New System.Drawing.Point(216, 18)
-        Me.R3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.R3.Location = New System.Drawing.Point(146, 14)
         Me.R3.Name = "R3"
-        Me.R3.Size = New System.Drawing.Size(164, 21)
+        Me.R3.Size = New System.Drawing.Size(101, 17)
         Me.R3.TabIndex = 2
-        Me.R3.Text = "300x / GO / E100x"
+        Me.R3.Text = "300x / Street"
         Me.R3.UseVisualStyleBackColor = True
         '
         'R2
         '
         Me.R2.AutoSize = True
         Me.R2.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.R2.Location = New System.Drawing.Point(116, 18)
-        Me.R2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.R2.Location = New System.Drawing.Point(79, 14)
         Me.R2.Name = "R2"
-        Me.R2.Size = New System.Drawing.Size(65, 21)
+        Me.R2.Size = New System.Drawing.Size(53, 17)
         Me.R2.TabIndex = 1
         Me.R2.Text = "200x"
         Me.R2.UseVisualStyleBackColor = True
@@ -105,10 +113,9 @@ Partial Class Form1
         Me.R1.AutoSize = True
         Me.R1.Checked = True
         Me.R1.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.R1.Location = New System.Drawing.Point(16, 18)
-        Me.R1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.R1.Location = New System.Drawing.Point(12, 14)
         Me.R1.Name = "R1"
-        Me.R1.Size = New System.Drawing.Size(65, 21)
+        Me.R1.Size = New System.Drawing.Size(53, 17)
         Me.R1.TabIndex = 0
         Me.R1.TabStop = True
         Me.R1.Text = "100x"
@@ -120,20 +127,18 @@ Partial Class Form1
         Me.vOS.Font = New System.Drawing.Font("Verdana", 8.25!)
         Me.vOS.FormattingEnabled = True
         Me.vOS.Items.AddRange(New Object() {"6.60", "6.61"})
-        Me.vOS.Location = New System.Drawing.Point(331, 107)
-        Me.vOS.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.vOS.Location = New System.Drawing.Point(248, 87)
         Me.vOS.Name = "vOS"
-        Me.vOS.Size = New System.Drawing.Size(99, 25)
+        Me.vOS.Size = New System.Drawing.Size(75, 21)
         Me.vOS.TabIndex = 3
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.Label1.Location = New System.Drawing.Point(188, 111)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(141, 90)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(123, 17)
+        Me.Label1.Size = New System.Drawing.Size(101, 13)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "System version:"
         '
@@ -141,21 +146,18 @@ Partial Class Form1
         '
         Me.GroupBox2.Controls.Add(Me.CFW)
         Me.GroupBox2.Controls.Add(Me.OFW)
-        Me.GroupBox2.Location = New System.Drawing.Point(13, 140)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Location = New System.Drawing.Point(10, 114)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox2.Size = New System.Drawing.Size(417, 407)
+        Me.GroupBox2.Size = New System.Drawing.Size(313, 331)
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         '
         'CFW
         '
         Me.CFW.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.CFW.Location = New System.Drawing.Point(213, 23)
-        Me.CFW.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CFW.Location = New System.Drawing.Point(160, 19)
         Me.CFW.Name = "CFW"
-        Me.CFW.Size = New System.Drawing.Size(196, 43)
+        Me.CFW.Size = New System.Drawing.Size(147, 35)
         Me.CFW.TabIndex = 1
         Me.CFW.Text = "Copy CFW 6.60 to SD"
         Me.CFW.UseVisualStyleBackColor = True
@@ -163,10 +165,9 @@ Partial Class Form1
         'OFW
         '
         Me.OFW.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.OFW.Location = New System.Drawing.Point(8, 23)
-        Me.OFW.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.OFW.Location = New System.Drawing.Point(6, 19)
         Me.OFW.Name = "OFW"
-        Me.OFW.Size = New System.Drawing.Size(197, 43)
+        Me.OFW.Size = New System.Drawing.Size(148, 35)
         Me.OFW.TabIndex = 0
         Me.OFW.Text = "Copy OFW 6.60 to SD"
         Me.OFW.UseVisualStyleBackColor = True
@@ -174,22 +175,20 @@ Partial Class Form1
         'Log1
         '
         Me.Log1.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.Log1.Location = New System.Drawing.Point(23, 229)
-        Me.Log1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Log1.Location = New System.Drawing.Point(17, 186)
         Me.Log1.Name = "Log1"
         Me.Log1.ReadOnly = True
-        Me.Log1.Size = New System.Drawing.Size(397, 306)
+        Me.Log1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical
+        Me.Log1.Size = New System.Drawing.Size(299, 250)
         Me.Log1.TabIndex = 3
         Me.Log1.Text = ""
         '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.OFW_61)
-        Me.GroupBox3.Location = New System.Drawing.Point(13, 140)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Location = New System.Drawing.Point(10, 114)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox3.Size = New System.Drawing.Size(417, 407)
+        Me.GroupBox3.Size = New System.Drawing.Size(313, 331)
         Me.GroupBox3.TabIndex = 0
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Visible = False
@@ -197,19 +196,18 @@ Partial Class Form1
         'OFW_61
         '
         Me.OFW_61.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.OFW_61.Location = New System.Drawing.Point(8, 23)
-        Me.OFW_61.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.OFW_61.Location = New System.Drawing.Point(6, 19)
         Me.OFW_61.Name = "OFW_61"
-        Me.OFW_61.Size = New System.Drawing.Size(197, 43)
+        Me.OFW_61.Size = New System.Drawing.Size(148, 35)
         Me.OFW_61.TabIndex = 0
         Me.OFW_61.Text = "Copy OFW 6.61 to SD"
         Me.OFW_61.UseVisualStyleBackColor = True
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(447, 554)
+        Me.ClientSize = New System.Drawing.Size(335, 450)
         Me.Controls.Add(Me.Log1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.vOS)
@@ -218,10 +216,10 @@ Partial Class Form1
         Me.Controls.Add(Me.Disks)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox3)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "PSP_Mod v2.0"
+        Me.Text = "PSP_Mod v2.2"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -244,4 +242,5 @@ Partial Class Form1
     Friend WithEvents Log1 As RichTextBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents OFW_61 As Button
+    Friend WithEvents R4 As RadioButton
 End Class
