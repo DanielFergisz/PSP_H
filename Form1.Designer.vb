@@ -94,7 +94,7 @@ Partial Class Form1
         Me.R3.Name = "R3"
         Me.R3.Size = New System.Drawing.Size(101, 17)
         Me.R3.TabIndex = 2
-        Me.R3.Text = "300x / Street"
+        Me.R3.Text = "3000 / Street"
         Me.R3.UseVisualStyleBackColor = True
         '
         'R2
@@ -105,7 +105,7 @@ Partial Class Form1
         Me.R2.Name = "R2"
         Me.R2.Size = New System.Drawing.Size(53, 17)
         Me.R2.TabIndex = 1
-        Me.R2.Text = "200x"
+        Me.R2.Text = "2000"
         Me.R2.UseVisualStyleBackColor = True
         '
         'R1
@@ -118,7 +118,7 @@ Partial Class Form1
         Me.R1.Size = New System.Drawing.Size(53, 17)
         Me.R1.TabIndex = 0
         Me.R1.TabStop = True
-        Me.R1.Text = "100x"
+        Me.R1.Text = "1000"
         Me.R1.UseVisualStyleBackColor = True
         '
         'vOS
@@ -214,8 +214,8 @@ Partial Class Form1
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Open)
         Me.Controls.Add(Me.Disks)
-        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

@@ -4,15 +4,7 @@ Imports System
 Public Class Form1
     Dim appPath As String = IO.Path.Combine(Application.StartupPath, "") 'Pobiera ścieżke aplikacji do stringa
 
-    'Private Sub Info_Ok(sender As Object, e As EventArgs) Handles iOK()
-    '    Log1.SelectionColor = Color.ForestGreen
-    '    Log1.AppendText("OK")
-    '    Log1.SelectionColor = Color.Empty
-    'End Sub
-
     Private Sub Open_Click(sender As Object, e As EventArgs) Handles Open.Click
-        'Dim openDisk As String = Disks.Text -> tworzy stringa openDisk z zawartością pola Disks
-        'Process.Start(Mid(openDisk, 1, 3)) -> Otwiera folder pobierając 3 pierwsze znaki ze stringa
 
         If Disks.Text.Length = 0 Then
             MsgBox("Please select disk drive first !!!")
@@ -747,7 +739,7 @@ Public Class Form1
 
     Private Sub R3_CheckedChanged(sender As Object, e As EventArgs) Handles R3.CheckedChanged
         If R3.Checked = True Then
-            Log1.AppendText(Environment.NewLine + "Selected model 300x / GO / E100x")
+            Log1.AppendText(Environment.NewLine + "Selected model 300x / Street")
         End If
     End Sub
 
@@ -894,6 +886,12 @@ Public Class Form1
 
                 End If
             End If
+        End If
+    End Sub
+
+    Private Sub R4_CheckedChanged(sender As Object, e As EventArgs) Handles R4.CheckedChanged
+        If R4.Checked = True Then
+            Log1.AppendText(Environment.NewLine + "Selected model Go [ N100x ]")
         End If
     End Sub
 End Class
